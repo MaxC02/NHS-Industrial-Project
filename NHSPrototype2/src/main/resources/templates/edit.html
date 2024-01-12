@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Edit Address</title>
+</head>
+<body>
+
+	<h1>Edit an address</h1>
+
+	<form th:action="@{/EditAddress}" method=POST th:object="${address}">
+	
+		<h2>Address Line 1</h2>
+		<input type="text" th:field="*{address_Line_1}">
+		
+		<h2>Address Line 2</h2>
+		<input type="text" th:field="*{address_Line_2}">
+		
+		<h2>Name</h2>
+		<input type="text" th:field="*{name}">
+		
+		<h2>Postcode</h2>
+		<input type="text" th:field="*{postcode}">
+		
+		<h2>City</h2>
+		<input type="text" th:field="*{city}">
+		
+		<button type="submit">submit</button>
+		
+	</form>
+
+</body>
+</html>

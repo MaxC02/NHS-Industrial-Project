@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>NHS</title>
+	</head>
+	
+	<body>
+	
+		<form th:action="@{/MeetingCalculator}" method=POST th:object="${choices}">
+		
+			<div id="origin_selection">
+				<h1>Pick an origin location</h1>
+				<select th:field="*{origin}">
+					<th:block th:each="address : ${addresses}">
+						<option th:text="${address.toString}" th:value="${address.getPostcode}"></option>
+					</th:block>
+				</select>
+			</div>
+			
+			<div id="meeting_location_selection">
+				<h1>Pick a meeting location</h1>
+				<select th:field="*{destination}">
+					<th:block th:each="address : ${addresses}">
+						<option th:text="${address.toString}" th:value="${address.getPostcode}"></option>
+					</th:block>
+				</select>
+			</div>
+			
+			<button type="submit">submit</button>
+			
+			<div id="results">
+				<h1>Results in miles:</h1>
+				<label th:text="${result}"></label>
+			</div>
+			
+			
+			
+		</form>
+		
+	</body>
+	
+</html>

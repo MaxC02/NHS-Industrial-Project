@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Delete Address</title>
+</head>
+<body>
+	<h1>Delete Address</h1>
+	
+	<form th:action="@{/DeleteAddress}" method=POST th:object="${address}">
+		<h2>Enter Postcode</h2>
+		<input type="text" th:field="*{postcode}">
+		<button type="submit">submit</button>
+	</form>
+	
+</body>
+</html>
